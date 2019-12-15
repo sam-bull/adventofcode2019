@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.adventofcode2019.R
 import com.example.adventofcode2019.solutions.Day0
 import com.example.adventofcode2019.solutions.Day1
+import com.example.adventofcode2019.solutions.Day2
 import kotlinx.android.synthetic.main.day_fragment.*
 
 class DayFragment : Fragment() {
@@ -30,12 +31,8 @@ class DayFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        val day = when (activity?.intent?.getIntExtra("DAY", -1)) {
-            1 -> Day1()
-            else -> Day0()
-        }
         viewModel = ViewModelProviders.of(this).get(DayViewModel::class.java)
-        viewModel.solution = day
+        viewModel.setSolution(activity?.intent?.getIntExtra("DAY", -1))
         viewModel.resources = resources
 
         part_1_button.setOnClickListener { viewModel.onClickGetSolution(Part.ONE, part_1_input.text.toString()) }

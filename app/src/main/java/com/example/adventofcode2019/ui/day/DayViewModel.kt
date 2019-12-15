@@ -5,6 +5,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.adventofcode2019.R
+import com.example.adventofcode2019.solutions.Day0
+import com.example.adventofcode2019.solutions.Day1
+import com.example.adventofcode2019.solutions.Day2
 import com.example.adventofcode2019.solutions.DaySolution
 
 class DayViewModel : ViewModel() {
@@ -17,6 +20,13 @@ class DayViewModel : ViewModel() {
     lateinit var solution: DaySolution
     lateinit var resources: Resources
 
+    fun setSolution(day: Int?) {
+        solution = when (day) {
+            1 -> Day1()
+            2 -> Day2()
+            else -> Day0()
+        }
+    }
     fun onClickGetSolution(part: Part, input: String) {
         when (part) {
             Part.ONE -> {
