@@ -7,8 +7,7 @@ class MainViewModel : ViewModel() {
     val dataSet = IntArray(25) { i -> getStars(i + 1) }
 
     private fun getStars(day: Int) = when (day) {
-            1 -> 2
-            2 -> 1
+            1 -> 1
             else -> 0
         }
 

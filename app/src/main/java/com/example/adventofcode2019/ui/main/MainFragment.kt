@@ -1,15 +1,17 @@
 package com.example.adventofcode2019.ui.main
 
-import androidx.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.adventofcode2019.R
+import com.example.adventofcode2019.ui.day.DayActivity
 import kotlinx.android.synthetic.main.main_fragment.*
-import androidx.recyclerview.widget.RecyclerView
 
 class MainFragment : Fragment() {
 
@@ -31,7 +33,11 @@ class MainFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         my_recycler_view.setHasFixedSize(true)
         my_recycler_view.layoutManager = LinearLayoutManager(context)
-        my_recycler_view.adapter = MainAdapter(viewModel.dataSet)
+        val adapter = MainAdapter(viewModel.dataSet)
+        adapter.startDay.observe(
+            this,
+            Observer { startActivity(Intent(context, DayActivity::class.java).putExtra("DAY", it + 1)) })
+        my_recycler_view.adapter = adapter
     }
 
 }

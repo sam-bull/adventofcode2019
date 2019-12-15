@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    android:padding="12dp"
+    tools:context=".ui.day.DayFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/part_1"
+            android:textAppearance="@android:style/TextAppearance.Material.Title"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/part_1_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="@string/enter_input"
+            android:background="@color/colorPrimaryLight"
+            android:gravity="top|start"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:scrollbars="vertical" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/part_1_button"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/get_solution"
+            android:textAppearance="@android:style/TextAppearance.Material.Body1"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/part_1_solution"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textAppearance="@android:style/TextAppearance.Material.Body2"
+            android:textColor="@android:color/white"
+            tools:text="Solution: 123456" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/part_2"
+            android:textAppearance="@android:style/TextAppearance.Material.Title"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/part_2_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="@string/enter_input"
+            android:background="@color/colorPrimaryLight"
+            android:gravity="top|start"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:scrollbars="vertical" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/part_2_button"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/get_solution"
+            android:textAppearance="@android:style/TextAppearance.Material.Body1"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/part_2_solution"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textAppearance="@android:style/TextAppearance.Material.Body2"
+            android:textColor="@android:color/white"
+            tools:text="Solution: 123456" />
+    </LinearLayout>
+
+</LinearLayout>

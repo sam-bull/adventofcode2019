@@ -3,12 +3,17 @@ package com.example.adventofcode2019.ui.main
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adventofcode2019.R
 import kotlinx.android.synthetic.main.item_day_stars.view.*
 
 class MainAdapter(private val myDataset: IntArray) :
     RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
+
+    private val _startDay = MutableLiveData<Int>()
+    val startDay: LiveData<Int> = _startDay
 
     class MainViewHolder(val dayView: LinearLayout) : RecyclerView.ViewHolder(dayView)
 
@@ -29,7 +34,10 @@ class MainAdapter(private val myDataset: IntArray) :
         val stars = myDataset[position]
         holder.dayView.part_1_star.displayedChild = if (stars > 0) 1 else 0
         holder.dayView.part_2_star.displayedChild = if (stars > 1) 1 else 0
+
+        holder.dayView.setOnClickListener { _startDay.postValue(position) }
     }
 
     override fun getItemCount() = myDataset.size
+
 }

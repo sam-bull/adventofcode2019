@@ -9,6 +9,7 @@
         android:roundIcon="@drawable/ic_star_gold_24dp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.day.DayActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Advent of Code 2019</string>
+    <string name="day_title">Day %d</string>
+    <string name="part_1">Part 1</string>
+    <string name="part_2">Part 2</string>
+    <string name="enter_input">Enter input</string>
+    <string name="get_solution">Get Solution</string>
+    <string name="solution_text">Solution: %d</string>
 </resources>
