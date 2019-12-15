@@ -8,7 +8,7 @@ class MainViewModel : ViewModel() {
 
     private fun getStars(day: Int) = when (day) {
         1 -> 2
-        2 -> 1
+        2 -> 2
         else -> 0
     }
 
