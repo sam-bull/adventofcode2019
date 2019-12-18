@@ -1,12 +1,16 @@
 package com.example.adventofcode2019.solutions
 
 class Day2 : DaySolution() {
+
+    var is1202 = true
+
     override fun part1Solution(input: String): Int {
         val intCodesStr = input.split(",")
         val intCodes = intCodesStr.map { Integer.parseInt(it) }.toMutableList()
-
-        intCodes[1] = 12
-        intCodes[2] = 2
+        if (is1202) {
+            intCodes[1] = 12
+            intCodes[2] = 2
+        }
 
         return run(intCodes)
     }
@@ -15,11 +19,11 @@ class Day2 : DaySolution() {
         val intCodesStr = input.split(",")
         for (i in 0..100) {
             for (j in 0..100) {
-                val intCodes =  intCodesStr.map { Integer.parseInt(it) }.toMutableList()
+                val intCodes = intCodesStr.map { Integer.parseInt(it) }.toMutableList()
                 intCodes[1] = i
                 intCodes[2] = j
                 val result = run(intCodes)
-                if (result == 19690720) return i*100 + j
+                if (result == 19690720) return i * 100 + j
             }
         }
         return -1
