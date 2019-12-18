@@ -5,10 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.adventofcode2019.R
-import com.example.adventofcode2019.solutions.Day0
-import com.example.adventofcode2019.solutions.Day1
-import com.example.adventofcode2019.solutions.Day2
-import com.example.adventofcode2019.solutions.DaySolution
+import com.example.adventofcode2019.solutions.*
 
 class DayViewModel : ViewModel() {
 
@@ -24,6 +21,7 @@ class DayViewModel : ViewModel() {
         solution = when (day) {
             1 -> Day1()
             2 -> Day2()
+            3 -> Day3()
             else -> Day0()
         }
     }
