@@ -23,6 +23,7 @@ class DayViewModel : ViewModel() {
             2 -> Day2()
             3 -> Day3()
             4 -> Day4()
+            5 -> Day5()
             else -> Day0()
         }
     }
