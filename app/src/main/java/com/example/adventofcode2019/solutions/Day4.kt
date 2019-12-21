@@ -20,8 +20,9 @@ class Day4 : DaySolution() {
                             loopF@ for (f in 0..9) {
                                 if (e > f) continue@loopF
                                 val str = listOf(a, b, c, d, e, f).joinToString("")
-                                if (Integer.parseInt(str) in lowerInt..upperInt && (a == b ||
-                                    b == c || c == d || d == e || e == f)) {
+                                if (Integer.parseInt(str) in lowerInt..upperInt &&
+                                    (a == b || b == c || c == d || d == e || e == f)
+                                ) {
                                     doubles++
                                 }
                             }
@@ -34,7 +35,40 @@ class Day4 : DaySolution() {
     }
 
     override fun part2Solution(input: String): Int {
-        return 0
+        val range = input.split("-")
+        val lowerInt = Integer.parseInt(range[0])
+        val upperInt = Integer.parseInt(range[1])
+
+        var doubles = 0
+
+        loopA@ for (a in 0..9) {
+            loopB@ for (b in 0..9) {
+                if (a > b) continue@loopB
+                loopC@ for (c in 0..9) {
+                    if (b > c) continue@loopC
+                    loopD@ for (d in 0..9) {
+                        if (c > d) continue@loopD
+                        loopE@ for (e in 0..9) {
+                            if (d > e) continue@loopE
+                            loopF@ for (f in 0..9) {
+                                if (e > f) continue@loopF
+                                val str = listOf(a, b, c, d, e, f).joinToString("")
+                                if (Integer.parseInt(str) in lowerInt..upperInt &&
+                                    ((a == b && b != c) ||
+                                            (a != b && b == c && c != d) ||
+                                            (b != c && c == d && d != e) ||
+                                            (c != d && d == e && e != f) ||
+                                            (d != e && e == f))
+                                ) {
+                                    doubles++
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return doubles
     }
 
 }

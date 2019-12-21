@@ -10,7 +10,7 @@ class MainViewModel : ViewModel() {
         1 -> 2
         2 -> 2
         3 -> 2
-        4 -> 1
+        4 -> 2
         else -> 0
     }
 
